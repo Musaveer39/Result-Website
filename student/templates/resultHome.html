@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function redirectToResult(event) {
+            event.preventDefault();  // Prevent default form submission
+            
+            let usn = document.getElementById("usn").value.toUpperCase();
+            
+            if (usn === "") {
+                alert("Please enter a valid USN.");
+                return;
+            }
+            
+            window.location.href = "/result/" + encodeURIComponent(usn) + "/";
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🔍 Enter USN to View Result</h2>
+        <form onsubmit="redirectToResult(event)">
+            <input type="text" id="usn" name="usn" placeholder="Enter USN" required>
+            <button type="submit" class="btn">View Result</button>
+        </form>
+    </div>
+
+</body>
+</html>
