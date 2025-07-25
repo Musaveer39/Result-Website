@@ -35,7 +35,7 @@
       animation: fadeIn 1s ease;
     }
 
-    h1 {
+    h1,h2 {
       color: #2c3e50;
       font-size: 2.5rem;
       margin-bottom: 30px;
@@ -92,13 +92,17 @@
 
   <div class="dashboard-container">
     <h1>Teacher Dashboard</h1>
+    <h2>Select Student</h2>
     <div class="card-grid">
       {% for i in data %}
         <div class="glass-card">
           <button class="btn-custom" onclick="window.location.href='/teacher/{{ i.sem }}/{{ i.usn }}/'">
             {{ i.usn }}
           </button>
+          
         </div>
+        {% empty %}
+        <p>No students registed yet for this semester.</p>
       {% endfor %}
     </div>
   </div>

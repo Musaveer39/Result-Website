@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from student.views import StudentView,result,resultHome
 from teacher.views import teacherView ,MarksEntry,teacher,teacherLogin,sem,home,register
+from principle.views import principal,sems,subjects,add_subjects,delete_subject
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
@@ -26,6 +27,12 @@ urlpatterns = [
     path('', home),
     path('student/', StudentView.as_view()),
     path('teacher/<int:_id>/', teacherView),
+    #path('teacher/', principal),
+    path('principal/<int:sem_id>/', subjects, name='subjects'),
+    path('principal-login/', principal),
+    path('principal/add-subjects/<int:sem_id>/', add_subjects),
+    path('principal/delete/<int:subject_id>/', delete_subject),
+    path('principal/sem/', sems),
     path('login/', teacherLogin),
     path('teacher/sem/', sem),
     path('teacher/<int:sem>/<str:_usn>/' ,teacher),

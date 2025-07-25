@@ -58,5 +58,8 @@ class MarksEntry(APIView):
 def register(request):
     return render(request,'stud_register.html',{})
 
+def principal(request):
+    return render(request,'prin_login.html',{})
+
 def home(request):
     return render(request,'home.html',{})

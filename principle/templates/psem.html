@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Teacher Dashboard</title>
+  <title>Principal Dashboard</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     * {
@@ -15,7 +15,7 @@
 
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      background: linear-gradient(135deg, #eef2f3, #8e9eab);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -28,11 +28,18 @@
       text-align: center;
     }
 
-    h1,h2 {
+    h1 {
       color: #2c3e50;
-      font-size: 2.8rem;
-      margin-bottom: 40px;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
       animation: fadeIn 1s ease;
+    }
+
+    p.subtitle {
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      animation: fadeIn 1.2s ease;
     }
 
     .card-grid {
@@ -78,8 +85,8 @@
       background: linear-gradient(to right, #4facfe, #00f2fe);
       color: white;
       font-weight: 600;
-      font-size: 1.1rem;
-      padding: 10px 25px;
+      font-size: 1.05rem;
+      padding: 12px 20px;
       border-radius: 25px;
       border: none;
       cursor: pointer;
@@ -100,12 +107,12 @@
 <body>
 
   <div class="dashboard-container">
-    <h1>Teacher Dashboard</h1>
-    <h2>Select Semester</h2>
+    <h1>Principal Dashboard</h1>
+    <p class="subtitle">Select a semester below to add subjects</p>
     <div class="card-grid">
       {% for i in sem %}
         <div class="glass-card">
-          <button class="btn-custom" onclick="window.location.href='/teacher/{{ i.id }}/'">
+          <button class="btn-custom" onclick="window.location.href='/principal/{{ i.id }}/'">
             {{ i.s }}
           </button>
         </div>
