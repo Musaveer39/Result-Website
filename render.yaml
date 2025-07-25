@@ -3,10 +3,10 @@ services:
     name: Result_website
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn ResultWebsite.wsgi:application
+    startCommand: gunicorn Result_website.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: ResultWebsite.settings
+        value: Result_website.settings
       - key: PYTHON_VERSION
         value: 3.11
     autoDeploy: true
