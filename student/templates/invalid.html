@@ -1,53 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result Not Available</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            text-align: center;
-            padding: 50px;
-        }
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-        }
-        h1 {
-            color: #dc3545;
-            font-size: 24px;
-        }
-        p {
-            color: #6c757d;
-            font-size: 18px;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Result Not Available</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 480px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: 0.3s ease;
+    }
+
+    h1 {
+      color: #ff4c4c;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .glow {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: #ffcccc;
+      filter: blur(100px);
+      z-index: -1;
+      top: 20%;
+      left: 60%;
+      border-radius: 50%;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>🚫 Result Not Available</h1>
-        <p>Sorry, the result for this student is not available.</p>
-        <a href="/result/" class="btn">🔙 Go Back</a>
-    </div>
+  <div class="glow"></div>
+
+  <div class="container">
+    <h1>🚫 Result Not Available</h1>
+    <p>Sorry, the result for this student is not available.</p>
+    <a href="/result/" class="btn">🔙 Go Back</a>
+  </div>
 
 </body>
 </html>
