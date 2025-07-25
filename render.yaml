@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: Result_website
+    name: result-website
     runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn Result_website.wsgi:application
