@@ -78,6 +78,24 @@
       box-shadow: 0 0 15px #00c6ff90;
     }
 
+    .btn-back {
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      border: none;
+      color: #fff;
+      padding: 12px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 20px;
+      transition: 0.3s ease;
+    }
+
+    .btn-back:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px #ff4b2b90;
+    }
+
     .error-text {
       font-size: 13px;
       color: #ff4d4d;
@@ -125,6 +143,11 @@
     </form>
 
     <p id="responseMessage"></p>
+
+    <!-- Back Button -->
+    <button class="btn-back" onclick="window.location.href='/teacher/{{ sem_id }}/'">
+      ← Back to Students
+    </button>
   </div>
 
   <script>

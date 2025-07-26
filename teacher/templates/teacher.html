@@ -46,6 +46,7 @@
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
+      margin-bottom: 40px;
     }
 
     .glass-card {
@@ -81,11 +82,28 @@
       box-shadow: 0 0 15px #00c6ff90;
     }
 
+    .btn-back {
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-back:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #ff4b2b90;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
   </style>
 </head>
 <body>
@@ -99,12 +117,15 @@
           <button class="btn-custom" onclick="window.location.href='/teacher/{{ i.sem }}/{{ i.usn }}/'">
             {{ i.usn }}
           </button>
-          
         </div>
-        {% empty %}
-        <p>No students registed yet for this semester.</p>
+      {% empty %}
+        <p>No students registered yet for this semester.</p>
       {% endfor %}
     </div>
+
+    <button class="btn-back" onclick="window.location.href='/teacher/sem/'">
+      ← Back to Semesters
+    </button>
   </div>
 
 </body>

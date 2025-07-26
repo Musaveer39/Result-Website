@@ -23,7 +23,7 @@ def teacher(request,sem,_usn):
         sub['im'] = f'sub{ind+1}_im'
         sub['em'] = f'sub{ind+1}_em'
     
-    return render(request,'marks_form.html',{'usn':_usn,'sub':sub_list})
+    return render(request,'marks_form.html',{'usn':_usn,'sub':sub_list,'sem_id':sem})
 
 def teacherLogin(request):
     return render(request,'login.html',{})
